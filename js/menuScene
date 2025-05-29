@@ -6,7 +6,8 @@
 /**
  * This class is the splash scene for the game
  */
-class MenuScene extends Phaser.Scene {
+class MenuScene extends Phaser.Scene{
+    cameras: any;
     constructor() {
         super({ key: 'menuScene' });
     }

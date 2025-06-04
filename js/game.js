@@ -15,7 +15,7 @@ import GameScene from './gameScene.js'
 const splashScene = new SplashScene();
 const titleScene = new TitleScene();
 const menuScene = new MenuScene()
-const gamescene = Gamescene()
+const gamescene =  new GameScene()
 
 const config = {
     type: Phaser.AUTO,

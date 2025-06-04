@@ -1,18 +1,12 @@
 /* global phaser */
-// Created by: abdul
+// Created by: Arsene
 // Created on: May 2025
-// This is the Title scene for the game
+// This is the splash scene for the game
 
 /**
  * This class is the splash scene for the game
  */
-class TitleScene extends Phaser.Scene {
-    titleSceneBackgroundImage: any;
-    titleSceneTextStyle: { font: string; fill: string; align: string; };
-    titleSceneText: null;
-    cameras: any;
-    load: any;
-    add: any;
+class SplashScene extends Phaser.Scene {
     constructor() {
         super({ key: 'titleScene' });
 
@@ -20,27 +14,28 @@ class TitleScene extends Phaser.Scene {
         this.titleSceneText = null
         this.titleSceneTextStyle = { font: '200px Times', fill: '#fde4b9', align: 'center' }
     }
-  
-  
+
     init (data) {
-        this.cameras.main.setBackgroundColor("AEA04B");
+        this.cameras.main.setBackgroundColor("#ffffff");
     }
-  
+
     preload() {
-        console.log('Title Scene');
-        this.load.image('titleSceneBackground', 'assets/aliens_screen_image.jpg')
+        console.log('Splash Scene')
+        this.load.image('splashSceneBackground', './assets/splashSceneImage.png');
     }
-  
+
     create(data) {
-        this.titleSceneBackgroundImage = this.add.sprite(0, 0, 'titleSceneBackground').setScale(2.75)
+        this.titleSceneBackgroundImage = this.add.sprite(0, 0, 'splashSceneBackground').setScale(2.75)
         this.titleSceneBackgroundImage.x = 1920 / 2
         this.titleSceneBackgroundImage.y = 1080 / 2
 
         this.titleSceneText = this.add.text(1920 / 2, (1080 / 2) + 350, 'Space Aliens', this.titleSceneTextStyle).setOrigin(0.5)
+    }
 
+    update(time, delta) {
+        if (time > 3000) {
+            this.scene.switch('titleScene');
+        }
     }
-  
-    update (time, delta) { 
-    }
-  }
-    export default TitleScene
+}
+export default SplashScene

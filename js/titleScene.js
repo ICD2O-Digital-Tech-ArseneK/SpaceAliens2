@@ -25,7 +25,7 @@ class SplashScene extends Phaser.Scene {
     }
 
     create(data) {
-        this.titleSceneBackgroundImage = this.add.sprite(0, 0, 'splashSceneBackground').setScale(2.75)
+        this.titleSceneBackgroundImage = this.add.sprite(0, 0, 'aliens_screen_image.jpg').setScale(2.75)
         this.titleSceneBackgroundImage.x = 1920 / 2
         this.titleSceneBackgroundImage.y = 1080 / 2
 
